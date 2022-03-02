@@ -28,6 +28,7 @@ import EnvironmentService from './environment-service';
 import FeatureTagService from './feature-tag-service';
 import ProjectHealthService from './project-health-service';
 import UserSplashService from './user-splash-service';
+import { OpenApiService } from './openapi-service';
 
 export const createServices = (
     stores: IUnleashStores,
@@ -74,6 +75,7 @@ export const createServices = (
         featureToggleServiceV2,
     );
     const userSplashService = new UserSplashService(stores, config);
+    const openApiService = new OpenApiService(config);
 
     return {
         accessService,
@@ -103,6 +105,7 @@ export const createServices = (
         featureTagService,
         projectHealthService,
         userSplashService,
+        openApiService,
     };
 };
 
